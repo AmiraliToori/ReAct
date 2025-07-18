@@ -154,9 +154,8 @@ class HotPotQAWrapper(gym.Wrapper):
 class FeverWrapper(gym.Wrapper):
     def __init__(self, env, split, data_path_extra):
         super().__init__(env)
-        self.data_path_extra = data_path_extra
 
-        data_path = f".{self.data_path_extra}/data/{FEVER_SPLIT_FILE[split]}"
+        data_path = f".{data_path_extra}/data/{FEVER_SPLIT_FILE[split]}"
         with open(data_path, "r") as json_file:
             json_list = list(json_file)
 
